@@ -4,6 +4,7 @@ var hello = require('./app/hello');
 require('angular-ui-router');
 var routesConfig = require('./routes');
 
+require('normalize.css');
 require('./index.scss');
 
 var app = 'app';
