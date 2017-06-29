@@ -1,6 +1,8 @@
 var angular = require('angular');
 
-var hello = require('./app/hello');
+var main = require('./app/main');
+var nav = require('./app/components/nav/nav');
+var list = require('./app/components/list/list');
 require('angular-ui-router');
 var routesConfig = require('./routes');
 
@@ -13,4 +15,6 @@ module.exports = app;
 angular
   .module(app, ['ui.router'])
   .config(routesConfig)
-  .component('app', hello);
+  .component('component.main', main)
+  .component('component.nav', nav)
+  .component('component.list', list);

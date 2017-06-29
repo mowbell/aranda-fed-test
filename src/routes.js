@@ -6,8 +6,20 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
+    .state('main', {
+      component: 'component.main',
+      abstract:true
+    })
     .state('app', {
+      parent: 'main',
       url: '/',
-      component: 'app'
+       views:{
+         nav:{
+          component:'component.nav'
+        },
+        content:{
+          component:'component.list'
+        }
+      }
     });
 }
