@@ -10,9 +10,9 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       component: 'component.main',
       abstract:true
     })
-    .state('app', {
+    .state('home', {
       parent: 'main',
-      url: '/?{query:String}',
+      url: '/?query',
        views:{
          nav:{
           component:'component.nav'
@@ -20,10 +20,16 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         content:{
           component:'component.list'
         }
+      },
+      params:{
+        query:{
+          value:null,
+          squash:true
+        }
       }
     })
     .state('detail', {
-      parent: 'app',
+      parent: 'home',
       url: 'detail/{id:int}',
        views:{
         'content@^.^':{
