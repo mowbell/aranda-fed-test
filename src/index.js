@@ -3,6 +3,8 @@ var angular = require('angular');
 var main = require('./app/main');
 var nav = require('./app/components/nav/nav');
 var list = require('./app/components/list/list');
+var search = require('./app/components/search/search');
+var detail = require('./app/components/detail/detail');
 require('angular-ui-router');
 var routesConfig = require('./routes');
 
@@ -17,4 +19,6 @@ angular
   .config(routesConfig)
   .component('component.main', main)
   .component('component.nav', nav)
-  .component('component.list', list);
+  .component('component.list', list)
+  .component('component.detail', detail)
+  .component('component.search', search);

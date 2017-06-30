@@ -12,13 +12,22 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
     })
     .state('app', {
       parent: 'main',
-      url: '/',
+      url: '/?{query:String}',
        views:{
          nav:{
           component:'component.nav'
         },
         content:{
           component:'component.list'
+        }
+      }
+    })
+    .state('detail', {
+      parent: 'app',
+      url: 'detail/{id:int}',
+       views:{
+        'content@^.^':{
+          component:'component.detail'
         }
       }
     });
